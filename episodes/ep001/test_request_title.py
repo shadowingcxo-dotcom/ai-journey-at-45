@@ -11,5 +11,9 @@ class RequestTitleTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             normalize_title("   ")
 
+    def test_rejects_tab_and_newline(self):
+        with self.assertRaises(ValueError):
+            normalize_title("\t\n")
+
     def test_preserves_internal_spaces(self):
         self.assertEqual(normalize_title("Fix  demo link"), "Fix  demo link")

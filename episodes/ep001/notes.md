@@ -1,16 +1,13 @@
 # EP001 · Validating an internal request title
 
-## Question
-How should an internal tool handle a title that contains only whitespace?
+## Rule
+The learner explained that a whitespace-only title contains no usable information. Trim the outer whitespace, reject an empty result, and preserve spaces inside a valid title.
 
-## My predictions
-Write the expected outcome for each input before running the tests.
+## Implementation and debugging
+The learner wrote and saved the function. The assistant ran the tests and guided fixes to Python syntax and capitalization, including using `==` for comparison and spelling `ValueError` correctly.
 
-## What I implemented
-Describe your change and identify any AI assistance.
+## Additional test
+With guidance on `strip()` and the location of the test, the learner added a title containing a tab and a newline. The test expects `ValueError` because the resulting title is empty.
 
-## Debugging evidence
-Record one failing case, its cause, the change, and the observed result.
-
-## Independent check
-Add a new input, predict the result, run it, and explain what it verifies.
+## Observed result
+`python3 -m unittest -v` ran four tests. All passed. The learner reviewed how test discovery imports and calls the implementation.
